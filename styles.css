@@ -89,6 +89,29 @@ a:hover { color: var(--link-hover); }
   font-weight: 400;
 }
 
+/* Mobile menu button — hidden on desktop */
+.menu-toggle {
+  display: none;
+  width: 36px; height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.menu-toggle span {
+  display: block;
+  height: 1.5px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.3s var(--ease), opacity 0.2s var(--ease);
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
 /* =====================================================
    GLOBAL SECTIONS
    ===================================================== */
@@ -309,6 +332,66 @@ a:hover { color: var(--link-hover); }
 }
 
 /* =====================================================
+   PROJECTS GRID
+   ===================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.project-card {
+  background: var(--bg-grey);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  display: flex; flex-direction: column;
+  gap: 0.85rem;
+  transition: transform 0.4s var(--ease), background 0.3s var(--ease);
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  background: #ececef;
+}
+.project-tag {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--link);
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+.project-card h3 {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.project-body {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.project-meta {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.project-meta li {
+  display: flex; justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.92rem;
+}
+.project-meta li span { color: var(--ink-soft); }
+.project-meta li strong { color: var(--ink); font-weight: 500; text-align: right; }
+.projects-foot {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+/* =====================================================
    EXPERIENCE
    ===================================================== */
 .exp-grid {
@@ -510,9 +593,38 @@ a:hover { color: var(--link-hover); }
    RESPONSIVE
    ===================================================== */
 @media (max-width: 900px) {
-  .topbar-links { display: none; }
+  /* Mobile burger menu */
+  .menu-toggle { display: flex; }
+  .topbar nav {
+    position: absolute;
+    top: 52px;
+    left: 0; right: 0;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s var(--ease);
+  }
+  .topbar nav[data-open="true"] { max-height: 500px; }
+  .topbar-links {
+    display: flex; flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0;
+  }
+  .topbar-links li { width: 100%; }
+  .topbar-links a {
+    display: block;
+    padding: 0.85rem var(--pad);
+    font-size: 1.05rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-links li:last-child a { border-bottom: none; }
+
   .bento { grid-template-columns: repeat(2, 1fr); }
   .bento-wide { grid-column: span 2; }
+  .projects-grid { grid-template-columns: 1fr; }
   .impact-grid { grid-template-columns: repeat(2, 1fr); }
   .exp-grid, .edu-split { grid-template-columns: 1fr; }
 }
@@ -522,4 +634,5 @@ a:hover { color: var(--link-hover); }
   .display-sub { font-size: 1.5rem; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { flex-direction: column; }
+  .topbar-cta { display: none; }
 }

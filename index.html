@@ -3,8 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Yeluru Sreenivasulu — DevOps Engineer. Cloud infrastructure, automation, and reliability at scale." />
+  <meta name="description" content="Yeluru Sreenivasulu — DevOps Engineer. Cloud infrastructure, automation, and reliability at scale for FinTech." />
+  <meta name="author" content="Yeluru Sreenivasulu" />
+  <meta name="theme-color" content="#000000" />
   <title>Yeluru Sreenivasulu — DevOps Engineer</title>
+
+  <!-- Open Graph / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yelurusrinu.github.io/sreenivasulu.github.io/" />
+  <meta property="og:title" content="Yeluru Sreenivasulu — DevOps Engineer" />
+  <meta property="og:description" content="Cloud infrastructure for FinTech. AWS · Terraform · Kubernetes · CI/CD · 99.9% uptime · 400+ banking clients." />
+  <meta property="og:image" content="https://yelurusrinu.github.io/sreenivasulu.github.io/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Yeluru Sreenivasulu — DevOps Engineer" />
+  <meta name="twitter:description" content="Cloud infrastructure for FinTech. AWS · Terraform · Kubernetes · CI/CD · 99.9% uptime · 400+ banking clients." />
+  <meta name="twitter:image" content="https://yelurusrinu.github.io/sreenivasulu.github.io/og-image.svg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Structured data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yeluru Sreenivasulu",
+    "jobTitle": "DevOps Engineer",
+    "url": "https://yelurusrinu.github.io/sreenivasulu.github.io/",
+    "email": "syeluru123@gmail.com",
+    "telephone": "+91-7702506288",
+    "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressCountry": "IN" },
+    "sameAs": [
+      "https://github.com/yelurusrinu",
+      "https://linkedin.com/in/yelurusrinu"
+    ],
+    "alumniOf": "Sree Vidyanikethan Engineering College",
+    "knowsAbout": ["AWS", "Terraform", "Kubernetes", "Docker", "CI/CD", "Python", "DevOps", "Site Reliability Engineering"]
+  }
+  </script>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,10 +54,11 @@
 <header class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="#top">Yeluru Sreenivasulu</a>
-    <nav>
+    <nav id="primary-nav" aria-label="Primary">
       <ul class="topbar-links">
         <li><a href="#about">About</a></li>
         <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#impact">Impact</a></li>
         <li><a href="#education">Education</a></li>
@@ -24,6 +66,9 @@
       </ul>
     </nav>
     <a class="topbar-cta" href="assets/resume.pdf" download>Resume</a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -119,6 +164,112 @@
         <h3>Networking &amp; Linux</h3>
         <p class="bento-body">VPC, ALB/NLB, NGINX, HAProxy, DNS. RHEL, Ubuntu, CentOS, Amazon Linux.</p>
       </article>
+    </div>
+  </section>
+
+  <!-- PROJECTS / SELECTED WORK — LIGHT -->
+  <section class="section section-light" id="projects">
+    <div class="section-head reveal">
+      <p class="eyebrow">Selected work</p>
+      <h2 class="section-headline">Projects with measurable impact.</h2>
+    </div>
+    <div class="projects-grid">
+
+      <article class="project-card reveal">
+        <div class="project-tag">Automation Platform</div>
+        <h3>From a week to an hour.</h3>
+        <p class="project-body">
+          Architected an end-to-end onboarding platform with React, TypeScript, Node.js,
+          and Python that replaced manual workflows for 400+ banking clients —
+          including RBL Bank, SBI, IDBI Bank, and TransUnion CIBIL.
+        </p>
+        <ul class="project-meta">
+          <li><span>Outcome</span><strong>98% faster onboarding</strong></li>
+          <li><span>Scale</span><strong>400+ banking clients</strong></li>
+          <li><span>Stack</span><strong>React · TS · Node · Python</strong></li>
+        </ul>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-tag">Cost Optimization</div>
+        <h3>ARM migration to AWS Graviton.</h3>
+        <p class="project-body">
+          Led a phased migration of production workloads to ARM-based Graviton
+          processors with zero downtime. Re-validated builds, container images,
+          and dependencies across the platform.
+        </p>
+        <ul class="project-meta">
+          <li><span>Outcome</span><strong>$50K+ annual savings</strong></li>
+          <li><span>Reduction</span><strong>20% infrastructure cost</strong></li>
+          <li><span>Downtime</span><strong>Zero</strong></li>
+        </ul>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-tag">Database Engineering</div>
+        <h3>27 TB → 9 TB MySQL optimization.</h3>
+        <p class="project-body">
+          Designed an archival, compression, and cleanup strategy for a multi-tenant
+          MySQL fleet on AWS RDS. Reduced storage by two-thirds while maintaining
+          full operational continuity.
+        </p>
+        <ul class="project-meta">
+          <li><span>Outcome</span><strong>67% storage reduction</strong></li>
+          <li><span>Approach</span><strong>Archive · Compress · Clean</strong></li>
+          <li><span>Impact</span><strong>Significant RDS cost cut</strong></li>
+        </ul>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-tag">Database Migration</div>
+        <h3>MySQL → Oracle, zero data loss.</h3>
+        <p class="project-body">
+          Executed a live database migration using Oracle Golden Gate for real-time
+          replication. Maintained high availability for 400+ production clients
+          throughout the cutover.
+        </p>
+        <ul class="project-meta">
+          <li><span>Outcome</span><strong>0 data loss</strong></li>
+          <li><span>Tool</span><strong>Oracle Golden Gate</strong></li>
+          <li><span>Availability</span><strong>HA throughout cutover</strong></li>
+        </ul>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-tag">Infrastructure as Code</div>
+        <h3>Multi-tenant Terraform pipeline.</h3>
+        <p class="project-body">
+          Built a Terraform automation pipeline with 90% module reusability for
+          multi-tenant infrastructure provisioning. Integrated with AWS CDK and
+          CloudFormation for automated service deployment.
+        </p>
+        <ul class="project-meta">
+          <li><span>Reusability</span><strong>90% modules</strong></li>
+          <li><span>Stack</span><strong>Terraform · CDK · CloudFormation</strong></li>
+          <li><span>Pattern</span><strong>GitOps</strong></li>
+        </ul>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-tag">Observability</div>
+        <h3>Prometheus + Grafana monitoring stack.</h3>
+        <p class="project-body">
+          Designed a comprehensive observability stack across Prometheus, Grafana,
+          CloudWatch, and Loki. Authored 50+ custom dashboards and SLO-driven
+          alerting policies.
+        </p>
+        <ul class="project-meta">
+          <li><span>Outcome</span><strong>30% MTTR reduction</strong></li>
+          <li><span>Dashboards</span><strong>50+ custom</strong></li>
+          <li><span>Stack</span><strong>Prometheus · Grafana · CW · Loki</strong></li>
+        </ul>
+      </article>
+
+    </div>
+    <div class="projects-foot reveal">
+      <a href="https://github.com/yelurusrinu" class="pill-link" target="_blank" rel="noopener">
+        See all work on GitHub <span aria-hidden="true">›</span>
+      </a>
     </div>
   </section>
 
